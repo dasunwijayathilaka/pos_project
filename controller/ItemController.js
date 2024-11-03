@@ -32,7 +32,8 @@ $("#SaveItem").on("click", function() {
     ItemDB.push(item);
     itemTable();
     clearForm();
-});
+}
+);
 
 ///////////////////////////////////////////////////////
 /*Table update*/
