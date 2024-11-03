@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boostrap_POS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+
+    <style>
+    body {
+        background-image: url('../POS_Project/assets/images/pexels-serpstat-177219-572056.jpg'); /* Replace with your image URL */
+        background-size: 3000px;
+        background-position: center;  /* Centers the background image */
+        background-repeat: no-repeat;  /* Prevents the image from repeating */
+        font-family: Arial, sans-serif;
+}
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 4px 8px rgb(5, 255, 197); /* Regular shadow */
+    }
+
+    .card:hover {
+        transform: scale(1.05); /* Slightly enlarges the card on hover */
+        box-shadow: 0px 8px 16px rgb(248, 192, 50); /* Stronger shadow on hover */
+    }
+
+</style>
+
+
+
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom text-black">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+            <h2 class="m-0">Wije POS</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span id="Home" class="nav-link text-black" aria-current="page" href="#">Home</span>
+                </li>
+                <li class="nav-item">
+                    <span id="Customer" class="nav-link text-black" href="#">Customer</span>
+                </li>
+                <li class="nav-item">
+                    <span id="Store" class="nav-link text-black" href="#">Store</span>
+                </li>
+                <li class="nav-item">
+                    <span id="Order" class="nav-link text-black" href="#">Order</span>
+                </li>
+                <li class="nav-item">
+                    <span id="Order_history" class="nav-link text-black" href="#">Order History</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="Dashboard" class="container mt-5">
+    <div class="card-body text-center">
+        <div class="d-flex justify-content-center flex-wrap gap-4">
+
+            <!-- Customers Card -->
+            <div class="card p-4 mb-4" style="width: 20rem; background-color: #d405ff; color: #040709;">
+                <div class="card-body">
+                    <h4 class="card-title">Customer Count</h4>
+                    <p class="card-text display-3" id="customerCount">100</p>
+                </div>
+            </div>
+
+            <!-- Items Card -->
+            <div class="card p-4 mb-4" style="width: 20rem; background-color: #11d13b; color: #000000;">
+                <div class="card-body">
+                    <h4 class="card-title">Items Count</h4>
+                    <p class="card-text display-3" id="itemCount">50</p>
+                </div>
+            </div>
+
+            <!-- Orders Card -->
+            <div class="card p-4 mb-4" style="width: 20rem; background-color: #dc1a64; color: #100b0b;">
+                <div class="card-body">
+                    <h4 class="card-title">Orders Count</h4>
+                    <p class="card-text display-3" id="orderCount">150</p>
+                </div>
+            </div>
+
+             <!-- Order_history Card -->
+            <div class="card p-4 mb-4" style="width: 20rem; background-color: #36a5ef; color: #000000;">
+                <div class="card-body">
+                    <h4 class="card-title">History Count</h4>
+                    <p class="card-text display-3" id="order_history_Count">150</p>
+                </div>
+            </div>
+
+            <!-- Recent Orders Section -->
+            <div class="container mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center fw-bold">Recent Orders</h2>
+                        <div class="table-responsive mt-4">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>ORD001</td>
+                                    <td>TM.DILSHAN</td>
+                                    <td><i class="bi bi-check-circle text-success" title="Completed"></i></td> <!-- Completed -->
+                                    <td>2024-01-01</td>
+                                    <td>Rs 56,000</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD002</td>
+                                    <td>KAMINDU MENDIS</td>
+                                    <td><i class="bi bi-clock text-warning" title="Pending"></i></td> <!-- Pending -->
+                                    <td>2024-05-22</td>
+                                    <td>Rs 76,500</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD003</td>
+                                    <td>DASUN SHANAKA</td>
+                                    <td><i class="bi bi-x-circle text-danger" title="Cancelled"></i></td> <!-- Cancelled -->
+                                    <td>2024-09-05</td>
+                                    <td>Rs 300,000</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD004</td>
+                                    <td>STIVE SMITH</td>
+                                    <td><i class="bi bi-clock text-warning" title="Pending"></i></td> <!-- Pending -->
+                                    <td>2024-09-25</td>
+                                    <td>Rs 360,000</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD005</td>
+                                    <td>KIRAN POLLARD</td>
+                                    <td><i class="bi bi-check-circle text-success" title="Completed"></i></td> <!-- Completed -->
+                                    <td>2024-09-05</td>
+                                    <td>Rs 670,000</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD006</td>
+                                    <td>BRN STOKES</td>
+                                    <td><i class="bi bi-clock text-warning" title="Pending"></i></td> <!-- Pending -->
+                                    <td>2024-09-05</td>
+                                    <td>Rs 780,000</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--Create Customer-->
+<div class="card" id="Customer_Sec">
+    <div class="card-body">
+        <div id="customer-section" class="container mt-5">
+
+            <!-- Customer Form -->
+            <div class="card my-4">
+                <div class="card-header">Fill The Customer Details</div>
+                <div class="card-body">
+                    <form id="customerForm">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="col">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="mobile" class="form-label">Mobile Number</label>
+                                <input type="text" class="form-control" id="mobile" placeholder="Mobile Number" required>
+                            </div>
+                            <div class="col">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3" placeholder="Enter Address" required></textarea>
+                        </div>
+                        <button type="button" class="btn btn-success" id="SaveCustomer">Save</button>
+                        <button type="button" class="btn btn-warning" id="customer_update_button">Update</button>
+                        <button type="button" class="btn btn-danger" id="Customer_delete_button">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <!--Customer Table-->
+            <div class="card p-3">
+                <h4 class="card-title">Customers</h4>
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                    </tr>
+                    </thead>
+                    <tbody id="CustomerTable">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="Item_Sec" class="container mt-5">
+
+    <!-- Item Form -->
+    <div class="card my-4">
+        <div class="card-header">Enter Item Details</div>
+        <div class="card-body">
+            <form id="itemForm">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="itemName" class="form-label">Item Name</label>
+                        <input type="text" class="form-control" id="itemName" placeholder="Item Name" required>
+                    </div>
+                    <div class="col">
+                        <label for="qty" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="qty" placeholder="Quantity" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="itemDescription" class="form-label">Item Description</label>
+                    <textarea class="form-control" id="itemDescription" rows="3" placeholder="Enter Item Description" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="Enter Price" required>
+                </div>
+                <button type="button" class="btn btn-success" id="SaveItem">Save</button>
+                <button type="button" class="btn btn-warning" id="item_update_button">Update</button>
+                <button type="button" class="btn btn-danger" id="item_delete_button">Delete</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Item Table -->
+    <h3 class="mt-5">Item List</h3>
+    <div class="card p-3">
+        <h4 class="card-title">Item</h4>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Item Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody id="ItemTable">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<main id="Order_Sec">
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Invoice Details -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header" >Invoice Details</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="orderID" class="form-label">Order ID:</label>
+                            <input type="text" class="form-control" id="orderID">
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Date:</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="customer" class="form-label">Customer ID:</label>
+                            <select class="form-select" id="customer1">
+                               <!-- <option value="1" selected></option>-->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name1" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="name1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address:</label>
+                            <input type="text" class="form-control" id="address1" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Select -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Item Select</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="item" class="form-label">Item ID:</label>
+                            <select class="form-select" id="item">
+                                <!--<option value="P002" selected></option>-->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemName1" class="form-label">Item Name:</label>
+                            <input type="text" class="form-control" id="itemName1" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="price1" class="form-label">Price:</label>
+                            <input type="text" class="form-control" id="price1" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="qty1" class="form-label">Qty On Hand:</label>
+                            <input type="text" class="form-control" id="qty1" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="orderQty" class="form-label">Order Quantity:</label>
+                            <input type="text" class="form-control" id="orderQty" >
+                        </div>
+                        <button class="btn btn-success" id="AddItem">Add Item</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total & Payment -->
+            <div class="col-md-4">
+                <div class="total-box border rounded p-3">
+                    <p class="text-danger">SubTotal: <span id="subtotal"></span></p>
+                    <!--<h4>Total: <strong></strong></h4>-->
+
+                    <div class="mb-3">
+                        <label for="cash" class="form-label">Cash:</label>
+                        <input type="text" class="form-control" id="cash" >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="discount" class="form-label">Discount:</label>
+                        <input type="text" class="form-control" id="discount" >
+                    </div>
+
+                    <div class="mb-3">
+                        <h4 id="total">Total: <strong></strong></h4>
+                        <h5 id="balance">Balance: <strong></strong></h5>
+                        <!--<label for="balance" class="form-label">Balance:</label>
+                        <input type="text" class="form-control" id="balance" >-->
+                    </div>
+
+                    <button class="btn btn-success w-100" id="PurchaseItem">Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="mt-5">
+            <table class="table table-striped">
+                <thead class="table-success">
+                <tr>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody id="OrderTable">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<div class="card" id="HistoryOfOrder">
+    <div class="card-body">
+        <h1 class="text-center">Order History</h1>
+        <table class="table table-striped">
+            <thead class="table-success">
+            <tr>
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Subtotal</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="orderTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal for Order Details -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderDetailsLabel">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Item ID</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody id="orderDetailsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="JQuary/jquery-3.7.1.min.js"></script>
+<script>
+    let Dashboard = document.getElementById("Home");
+    let Customer = document.getElementById("Customer");
+    let Store = document.getElementById("Store");
+    let Order = document.getElementById("Order");
+    let Order_History = document.getElementById("Order_history");
+
+    let Dashboard_sec = document.getElementById("Dashboard");
+    let Customer_sec = document.getElementById("Customer_Sec");
+    let Store_sec = document.getElementById("Item_Sec");
+    let Order_sec = document.getElementById("Order_Sec");
+    let OrderHistory = document.getElementById("HistoryOfOrder");
+
+    Dashboard_sec.style.display = "block";
+    Customer_sec.style.display = "none";
+    Store_sec.style.display = "none";
+    Order_sec.style.display = "none";
+    OrderHistory.style.display = "none";
+
+    Dashboard.addEventListener("click", function (){
+        Dashboard_sec.style.display = "block";
+        Customer_sec.style.display = "none";
+        Store_sec.style.display = "none";
+        Order_sec.style.display = "none";
+        OrderHistory.style.display = "none";
+    });
+
+    Customer.addEventListener("click", function (){
+        Dashboard_sec.style.display = "none";
+        Customer_sec.style.display = "block";
+        Store_sec.style.display = "none";
+        Order_sec.style.display = "none";
+        OrderHistory.style.display = "none";
+    });
+
+    Store.addEventListener("click", function (){
+        Dashboard_sec.style.display = "none";
+        Customer_sec.style.display = "none";
+        Store_sec.style.display = "block";
+        Order_sec.style.display = "none";
+        OrderHistory.style.display = "none";
+    });
+
+    Order.addEventListener("click", function (){
+        Dashboard_sec.style.display = "none";
+        Customer_sec.style.display = "none";
+        Store_sec.style.display = "none";
+        Order_sec.style.display = "block";
+        OrderHistory.style.display = "none";
+    });
+
+    Order_History.addEventListener("click", function (){
+        Dashboard_sec.style.display = "none";
+        Customer_sec.style.display = "none";
+        Store_sec.style.display = "none";
+        Order_sec.style.display = "none";
+        OrderHistory.style.display = "block";
+    });
+</script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+<script type="module" src="controller/OrderHistoryController.js"></script>
+<script type="module">
+    import { OrderHistoryController } from './controller/OrderHistoryController.js';
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const orderHistoryController = new OrderHistoryController();
+        orderHistoryController.loadOrderHistory();
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

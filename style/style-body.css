@@ -1,0 +1,7 @@
+body {
+    background-image: url('Boostrap_POS_Project/Image/pexels-serpstat-177219-572056.jpg'); /* Replace with your image URL */
+    background-size: 3000px;
+    background-position: center;  /* Centers the background image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    font-family: Arial, sans-serif; /* Example of a font that can be globally set */
+}
